@@ -39,21 +39,7 @@ $(document).ready(function(){
             document.getElementById("currentScoreCounter").innerHTML = currentScoreCounter;
             console.log("Player picked a crystal. Current score: " + currentScoreCounter);
 
-            // Win condition
-            if (currentScoreCounter === targetScoreCounter) {
-                winCounter++;
-                document.getElementById("winCounter").innerHTML = winCounter;
-                alert("You won this round.");
-                console.log("You won this round.");
-            }
-            
-            // Lose condition
-            else if (currentScoreCounter > targetScoreCounter) {
-                lossCounter++;
-                document.getElementById("lossCounter").innerHTML = lossCounter;
-                alert("You lose this round.");
-                console.log("You lose this round.");
-            }
+
         });
 
         $("#crystalTwo").on("click", function() {
@@ -65,21 +51,6 @@ $(document).ready(function(){
             document.getElementById("currentScoreCounter").innerHTML = currentScoreCounter;
             console.log("Player picked a crystal. Current score: " + currentScoreCounter);
 
-            // Win condition
-            if (currentScoreCounter === targetScoreCounter) {
-                winCounter++;
-                document.getElementById("winCounter").innerHTML = winCounter;
-                alert("You won this round.");
-                console.log("You won this round.");
-            }
-            
-            // Lose condition
-            else if (currentScoreCounter > targetScoreCounter) {
-                lossCounter++;
-                document.getElementById("lossCounter").innerHTML = lossCounter;
-                alert("You lose this round.");
-                console.log("You lose this round.");
-            }
         });
 
         $("#crystalThree").on("click", function() {
@@ -91,21 +62,6 @@ $(document).ready(function(){
             document.getElementById("currentScoreCounter").innerHTML = currentScoreCounter;
             console.log("Player picked a crystal. Current score: " + currentScoreCounter);
 
-            // Win condition
-            if (currentScoreCounter === targetScoreCounter) {
-                winCounter++;
-                document.getElementById("winCounter").innerHTML = winCounter;
-                alert("You won this round.");
-                console.log("You won this round.");
-            }
-            
-            // Lose condition
-            else if (currentScoreCounter > targetScoreCounter) {
-                lossCounter++;
-                document.getElementById("lossCounter").innerHTML = lossCounter;
-                alert("You lose this round.");
-                console.log("You lose this round.");
-            }
         });
 
         $("#crystalFour").on("click", function() {
@@ -117,12 +73,16 @@ $(document).ready(function(){
             document.getElementById("currentScoreCounter").innerHTML = currentScoreCounter;
             console.log("Player picked a crystal. Current score: " + currentScoreCounter);
 
+        });
+
+        $(".crystal-image").on("click", function() {
             // Win condition
             if (currentScoreCounter === targetScoreCounter) {
                 winCounter++;
                 document.getElementById("winCounter").innerHTML = winCounter;
                 alert("You won this round.");
                 console.log("You won this round.");
+                gameStart();
             }
             
             // Lose condition
@@ -131,6 +91,7 @@ $(document).ready(function(){
                 document.getElementById("lossCounter").innerHTML = lossCounter;
                 alert("You lose this round.");
                 console.log("You lose this round.");
+                gameStart();
             }
         });
 
