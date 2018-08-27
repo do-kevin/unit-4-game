@@ -6,10 +6,51 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
 </head>
 <body>
     
-    <script src="assets/javascript/game.js"></script>
+    <div class="jumbotron">
+        <h1 class="display-3">Crystal Collector</h1>
+        <hr class="my-2">
+        <p class="lead">Placeholder text</p>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            Target Score: <span id="targetScoreCounter"></span> <!-- Player's Target Score -->
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            Current Score: <span id="currentScoreCounter"></span> <!-- Player's Current Score -->
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="card-body" id="crystal">
+            <!-- Crystals (Pictures) -->
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            Wins: <span id="winCounter"></span> <!-- Player's Win Counter -->
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body">
+            Losses: <span id="lossCounter"></span> <!-- Player's Loss Counter -->
+        </div>
+    </div>
+
+    
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
 </html>
