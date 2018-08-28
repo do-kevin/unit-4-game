@@ -120,6 +120,12 @@ $(document).ready(function () {
             console.log("You lose this round.");
             gameReset();
         }
+
+        // Sometimes, currentScoreCounter would produce NaN. 
+        // Possible solution?
+        else if (targetScoreCounter === NaN) {
+            gameReset();
+        }
     });
 
     // jQuery animations
