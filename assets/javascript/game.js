@@ -3,7 +3,7 @@ $(document).ready(function () {
     // Global Variables
     //==============================================================================================================
     var currentScoreCounter = 0;
-    var targetScoreCounter = Math.round(Math.random() * 120) + 19; // Establish target score the player would need to get.
+    var targetScoreCounter = targetScoreCounterFunction(); // Establish target score the player would need to get. 102 = 121 - 19
     var winCounter = 0;
     var lossCounter = 0;
 
@@ -20,11 +20,31 @@ $(document).ready(function () {
     var randomCrystalNum4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     var increasingCurrentScore4 = randomCrystalNum4[Math.round(Math.random() * 12) + 1];
 
+    var crystalOneImage = $("#crystalOne");
+    var crystalTwoImage = $("#crystalTwo");
+    var crystalThreeImage = $("#crystalThree");
+    var crystalFourImage = $("#crystalFour");
+ 
+
+    // Functions
+    //==============================================================================================================
+
+    // To prevent from getting NaN, return functoin value to targetScoreCounter
+    // This function could be used to do the same for the increasingCurrentScore variables
+    //   to make code more reusable.
+    function targetScoreCounterFunction(min, max) {
+        min = Math.ceil(19);
+        max = Math.round(120);
+        return Math.round(Math.random() * (max - min) + min);
+    }
+
+    // Only reset the necessary vars
     function gameReset() {
         currentScoreCounter = 0;
-        targetScoreCounter = Math.round(Math.random() * 120) + 19;
+        targetScoreCounter = targetScoreCounterFunction();
 
-        document.getElementById("currentScoreCounter").innerHTML = 0;
+
+        $("#currentScoreCounter").html(0);
 
         increasingCurrentScore1 = randomCrystalNum1[Math.round(Math.random() * 12) + 1];
         increasingCurrentScore2 = randomCrystalNum2[Math.round(Math.random() * 12) + 1];
@@ -33,12 +53,6 @@ $(document).ready(function () {
 
         $("#targetScoreCounter").text(targetScoreCounter);
     }
- 
-
-    // Functions
-    //==============================================================================================================
-
-
 
     // Show target score to see if it's working
     $("#targetScoreCounter").text(targetScoreCounter);
@@ -49,7 +63,7 @@ $(document).ready(function () {
         currentScoreCounter += increasingCurrentScore1;
 
         // Register crystal selection & current score
-        document.getElementById("currentScoreCounter").innerHTML = currentScoreCounter;
+        $("#currentScoreCounter").html(currentScoreCounter);
         console.log("Player picked a crystal. Current score: " + currentScoreCounter);
 
 
@@ -61,7 +75,7 @@ $(document).ready(function () {
         currentScoreCounter += increasingCurrentScore2;
 
         // Register crystal selection & current score
-        document.getElementById("currentScoreCounter").innerHTML = currentScoreCounter;
+        $("#currentScoreCounter").html(currentScoreCounter);
         console.log("Player picked a crystal. Current score: " + currentScoreCounter);
 
     });
@@ -72,7 +86,7 @@ $(document).ready(function () {
         currentScoreCounter += increasingCurrentScore3;
 
         // Register crystal selection & current score
-        document.getElementById("currentScoreCounter").innerHTML = currentScoreCounter;
+        $("#currentScoreCounter").html(currentScoreCounter);
         console.log("Player picked a crystal. Current score: " + currentScoreCounter);
 
     });
@@ -83,7 +97,7 @@ $(document).ready(function () {
         currentScoreCounter += increasingCurrentScore4;
 
         // Register crystal selection & current score
-        document.getElementById("currentScoreCounter").innerHTML = currentScoreCounter;
+        $("#currentScoreCounter").html(currentScoreCounter);
         console.log("Player picked a crystal. Current score: " + currentScoreCounter);
 
     });
@@ -92,7 +106,7 @@ $(document).ready(function () {
         // Win condition
         if (currentScoreCounter === targetScoreCounter) {
             winCounter++;
-            document.getElementById("winCounter").innerHTML = winCounter;
+            $("#winCounter").html(winCounter);
             alert("You won this round.");
             console.log("You won this round.");
             gameReset();
@@ -101,18 +115,48 @@ $(document).ready(function () {
         // Lose condition
         else if (currentScoreCounter > targetScoreCounter) {
             lossCounter++;
-            document.getElementById("lossCounter").innerHTML = lossCounter;
+            $("#lossCounter").html(lossCounter);
             alert("You lose this round.");
             console.log("You lose this round.");
             gameReset();
         }
     });
 
-    // Main Process
-    //==============================================================================================================
+    // jQuery animations
+    $("#crystalOne").on({
+        mouseenter: function () {
+            crystalOneImage.animate({ height: "300px", width: "300px" });
+        },
+        mouseleave: function () {
+            crystalOneImage.animate({ height: "200px", width: "200px" });
+        }
+    });
 
-    // Initiate game
+    $("#crystalTwo").on({
+        mouseenter: function () {
+            crystalTwoImage.animate({ height: "300px", width: "300px" });
+        },
+        mouseleave: function () {
+            crystalTwoImage.animate({ height: "200px", width: "200px" });
+        }
+    });
 
+    $("#crystalThree").on({
+        mouseenter: function () {
+            crystalThreeImage.animate({ height: "300px", width: "300px" });
+        },
+        mouseleave: function () {
+            crystalThreeImage.animate({ height: "200px", width: "200px" });
+        }
+    });
 
+    $("#crystalFour").on({
+        mouseenter: function () {
+            crystalFourImage.animate({ height: "300px", width: "300px" });
+        },
+        mouseleave: function () {
+            crystalFourImage.animate({ height: "200px", width: "200px" });
+        }
+    });
 });
 

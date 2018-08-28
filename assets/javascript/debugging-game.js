@@ -3,7 +3,7 @@ $(document).ready(function () {
     // Global Variables
     //==============================================================================================================
     var currentScoreCounter = 0;
-    var targetScoreCounter = Math.round(Math.random() * 120) + 19; // Establish target score the player would need to get.
+    var targetScoreCounter = targetScoreCounter(); // Establish target score the player would need to get.
     var winCounter = 0;
     var lossCounter = 0;
 
@@ -19,6 +19,13 @@ $(document).ready(function () {
 
     var randomCrystalNum4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
     var increasingCurrentScore4 = randomCrystalNum4[Math.round(Math.random() * 12) + 1];
+
+    // To prevent from getting NaN, return functoin value to targetScoreCounter
+    function targetScoreCounter(min, max) {
+        min = Math.ceil(19);
+        max = Math.round(120);
+        return Math.round(Math.random() * (max - min) + min);
+      }
 
     function gameStart() {
         currentScoreCounter = 0;

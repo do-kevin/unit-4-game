@@ -21,17 +21,22 @@
     <div class="jumbotron">
         <h1 class="display-3">Crystal Collector</h1>
         <hr class="my-2">
-        <p class="lead">Placeholder text</p>
+        <p class="lead">
+            You will be given a new random number at the start.<br><br>
+            There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your current score. <br><br>
+            You win the game by matching your total score to the random target score. If your current score goes above the target score, you lose. <br><br>
+            Each round will generate different values for the target score and crystals.
+        </p>
     </div>
 
     <div class="card">
-        <div class="card-body">
+        <div class="card-body scores">
             Target Score: <span id="targetScoreCounter">0</span> <!-- Player's Target Score -->
         </div>
     </div>
 
     <div class="card">
-        <div class="card-body">
+        <div class="card-body scores">
             Current Score: <span id="currentScoreCounter">0</span> <!-- Player's Current Score -->
         </div>
     </div>
@@ -46,13 +51,13 @@
     </div>
 
     <div class="card">
-        <div class="card-body">
+        <div class="card-body" id="win-card-body">
             Wins: <span id="winCounter">0</span> <!-- Player's Win Counter -->
         </div>
     </div>
 
     <div class="card">
-        <div class="card-body">
+        <div class="card-body" id="lose-card-body">
             Losses: <span id="lossCounter">0</span> <!-- Player's Loss Counter -->
         </div>
     </div>
