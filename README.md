@@ -1,6 +1,6 @@
 # unit-4-game
 
-##Crystal Collector##
+## Crystal Collector
 * You will be given a new random number at the start.
 
 * There are four crystals below. By clicking on a crystal, you will add a specific amount of points to your current score. 
