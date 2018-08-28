@@ -9,4 +9,4 @@
 
 * Each round will generate different values for the target score and crystals.
 
-This project was aimed for practicing jQuery without relying too much on JavaScript
+* This project was aimed for practicing jQuery without relying too much on JavaScript
